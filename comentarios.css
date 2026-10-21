@@ -1,0 +1,137 @@
+/* PARTE B — Comentarios: formulario y tarjetas nuevas de clientes. */
+
+.testimonio.nuevo {
+    animation: aparecer 0.6s ease-out;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+/* ---------- Formulario de comentarios ---------- */
+
+.comentarios {
+    margin-top: 40px;
+}
+
+#form-comentario {
+    max-width: 600px;
+    margin: 0;
+}
+
+#form-comentario fieldset {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 10px 0 0;
+    padding: 8px 12px 12px;
+    border: 1px solid #8aa4a9;
+    border-radius: 5px;
+}
+
+#form-comentario legend {
+    padding: 0 4px;
+    font-size: 14px;
+}
+
+#form-comentario .ayuda,
+#form-comentario .contador {
+    width: 100%;
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #3d4a4d;
+}
+
+#form-comentario .contador {
+    text-align: right;
+}
+
+#form-comentario select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#form-comentario [aria-invalid="true"] {
+    border: 2px solid #b00020;
+}
+
+.error-campo {
+    width: 100%;
+    margin: 4px 0 0;
+    font-size: 13px;
+    font-weight: bold;
+    color: #b00020;
+}
+
+.valorar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.valorar input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    opacity: 0;
+}
+
+.valorar label {
+    width: auto;
+    margin: 0;
+    font-size: 2em;
+    line-height: 1;
+    color: #8aa4a9;
+    cursor: pointer;
+}
+
+.valorar input:checked ~ label,
+.valorar label:hover,
+.valorar label:hover ~ label {
+    color: #b35900;
+}
+
+.valorar input:focus-visible + label {
+    outline: 3px solid #005f99;
+    outline-offset: 2px;
+}
+
+#form-comentario button[type="submit"] {
+    padding: 10px 24px;
+    background-color: #014d2d;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#form-comentario button[type="submit"]:hover {
+    background-color: #013a22;
+}
+
+.mensaje-envio {
+    width: 100%;
+    max-width: 600px;
+    margin: 10px 0 0;
+    font-weight: bold;
+    color: #014d2d;
+}
+
+.aviso-demo {
+    margin-top: 24px;
+    font-size: 13px;
+    color: #3d4a4d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .testimonio.nuevo {
+        animation: none;
+    }
+}

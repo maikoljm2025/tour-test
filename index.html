@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explora el Mundo | Agencia de viajes y tours</title>
     <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="testimonios.css">
+        <link rel="stylesheet" href="resenas.css">
+        <link rel="stylesheet" href="comentarios.css">
 </head>
 <body>
 
@@ -63,27 +66,264 @@
             </div>
         </section>
 
-        <!-- Testimonios -->
-        <section id="testimonios">
-            <h2 class="subtitulo">Testimonios</h2>
-            <div class="testimonios">
-                <article class="testimonio">
-                    <p>"Un viaje inolvidable, todo estuvo muy bien organizado."</p>
-                    <p><strong>María G.</strong></p>
-                    <img src="img/cliente1.jpg" alt="Foto de María">
-                </article>
-                <article class="testimonio">
-                    <p>"Excelente atención y los guías muy amables."</p>
-                    <p><strong>Carlos R.</strong></p>
-                    <img src="img/cliente2.jpg" alt="Foto de Carlos">
-                </article>
-                <article class="testimonio">
-                    <p>"Repetiría sin dudarlo, 100% recomendado."</p>
-                    <p><strong>Ana L.</strong></p>
-                    <img src="img/cliente3.jpg" alt="Foto de Ana">
-                </article>
-            </div>
-        </section>
+            <!-- ===== TESTIMONIOS (rama feature/testimonios) ===== -->
+            <section id="testimonios" aria-labelledby="titulo-testimonios">
+                <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+                    <symbol id="logo-google" viewBox="0 0 48 48">
+                        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                    </symbol>
+                </svg>
+
+                <h2 class="subtitulo" id="titulo-testimonios">Lo que dicen nuestros viajeros</h2>
+                <p class="testimonios-intro">
+                    Cada viaje es una historia. Lee las opiniones de quienes ya viajaron con nosotros
+                    y cuéntanos la tuya.
+                </p>
+
+                <!-- ===== PARTE A: RESEÑAS (resenas.css / resenas.js) — resumen de Google, filtros y tarjetas ===== -->
+
+                <!-- Resumen de reseñas de Google (datos de ejemplo) -->
+                <div class="resumen-google">
+                    <div class="resumen-nota">
+                        <strong>4,7</strong>
+                        <p><span class="estrellas" role="img" aria-label="4,7 de 5 estrellas">★★★★★</span></p>
+                        <p class="google-marca">
+                            <svg aria-hidden="true" focusable="false"><use href="#logo-google"></use></svg>
+                            126 reseñas en Google
+                        </p>
+                    </div>
+
+                    <ul class="distribucion" aria-label="Distribución de las reseñas de Google">
+                        <li>
+                            <span>5 estrellas</span>
+                            <progress max="100" value="82" aria-label="5 estrellas: 82 %"></progress>
+                            <span>82 %</span>
+                        </li>
+                        <li>
+                            <span>4 estrellas</span>
+                            <progress max="100" value="12" aria-label="4 estrellas: 12 %"></progress>
+                            <span>12 %</span>
+                        </li>
+                        <li>
+                            <span>3 estrellas</span>
+                            <progress max="100" value="4" aria-label="3 estrellas: 4 %"></progress>
+                            <span>4 %</span>
+                        </li>
+                        <li>
+                            <span>2 estrellas</span>
+                            <progress max="100" value="2" aria-label="2 estrellas: 2 %"></progress>
+                            <span>2 %</span>
+                        </li>
+                        <li>
+                            <span>1 estrella</span>
+                            <progress max="100" value="1" aria-label="1 estrella: 1 %"></progress>
+                            <span>1 %</span>
+                        </li>
+                    </ul>
+
+                    <!-- TODO: reemplazar por el enlace real de la ficha de Google de la agencia -->
+                    <a class="boton-google" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">
+                        Ver todas en Google<span class="solo-lectores"> (se abre en una pestaña nueva)</span>
+                    </a>
+                </div>
+
+                <!-- Filtros -->
+                <fieldset class="filtros" id="filtros">
+                    <legend>Mostrar:</legend>
+                    <button type="button" data-filtro="todos" aria-pressed="true">Todas</button>
+                    <button type="button" data-filtro="google" aria-pressed="false">Google</button>
+                    <button type="button" data-filtro="cliente" aria-pressed="false">Comentarios de clientes</button>
+                </fieldset>
+                <p class="estado-filtro" id="estado-filtro" role="status" aria-live="polite"></p>
+
+                <!-- Tarjetas (contenido de ejemplo) -->
+                <ul class="testimonios" id="lista-testimonios">
+                    <li class="testimonio" data-origen="google">
+                        <div class="testimonio-cabecera">
+                            <span class="iniciales" aria-hidden="true">LM</span>
+                            <div>
+                                <p class="testimonio-autor">Laura Méndez</p>
+                                <p class="testimonio-viaje">Crucero por el Caribe</p>
+                            </div>
+                        </div>
+                        <div class="testimonio-meta">
+                            <span class="estrellas" role="img" aria-label="5 de 5 estrellas">★★★★★</span>
+                            <span class="testimonio-fecha">septiembre de 2026</span>
+                            <span class="etiqueta-origen"><svg aria-hidden="true" focusable="false"><use href="#logo-google"></use></svg>Google</span>
+                        </div>
+                        <blockquote>
+                            Todo estuvo perfectamente organizado: traslados, excursiones y hasta una cena
+                            sorpresa por nuestro aniversario. Volveremos a viajar con ellos sin dudarlo.
+                        </blockquote>
+                    </li>
+
+                    <li class="testimonio" data-origen="google">
+                        <div class="testimonio-cabecera">
+                            <span class="iniciales" aria-hidden="true">CR</span>
+                            <div>
+                                <p class="testimonio-autor">Carlos Ramírez</p>
+                                <p class="testimonio-viaje">Tour por Europa</p>
+                            </div>
+                        </div>
+                        <div class="testimonio-meta">
+                            <span class="estrellas" role="img" aria-label="5 de 5 estrellas">★★★★★</span>
+                            <span class="testimonio-fecha">agosto de 2026</span>
+                            <span class="etiqueta-origen"><svg aria-hidden="true" focusable="false"><use href="#logo-google"></use></svg>Google</span>
+                        </div>
+                        <blockquote>
+                            Recorrimos seis países en dos semanas y nunca sentimos prisa. El guía conocía
+                            rincones que ninguna app te recomienda. Totalmente recomendado.
+                        </blockquote>
+                        <p class="respuesta">
+                            <strong>Respuesta de la agencia</strong>
+                            ¡Gracias, Carlos! Nos alegra que disfrutaras la ruta. ¡Te esperamos en el próximo viaje!
+                        </p>
+                    </li>
+
+                    <li class="testimonio" data-origen="google">
+                        <div class="testimonio-cabecera">
+                            <span class="iniciales" aria-hidden="true">SP</span>
+                            <div>
+                                <p class="testimonio-autor">Sofía Pérez</p>
+                                <p class="testimonio-viaje">Safari en África</p>
+                            </div>
+                        </div>
+                        <div class="testimonio-meta">
+                            <span class="estrellas" role="img" aria-label="5 de 5 estrellas">★★★★★</span>
+                            <span class="testimonio-fecha">julio de 2026</span>
+                            <span class="etiqueta-origen"><svg aria-hidden="true" focusable="false"><use href="#logo-google"></use></svg>Google</span>
+                        </div>
+                        <blockquote>
+                            Ver a los elefantes al amanecer fue lo más impresionante que he vivido. El
+                            alojamiento superó mis expectativas y el equipo estuvo pendiente de todo.
+                        </blockquote>
+                    </li>
+
+                    <li class="testimonio" data-origen="google">
+                        <div class="testimonio-cabecera">
+                            <span class="iniciales" aria-hidden="true">AG</span>
+                            <div>
+                                <p class="testimonio-autor">Andrés Gómez</p>
+                                <p class="testimonio-viaje">Aventura en la montaña</p>
+                            </div>
+                        </div>
+                        <div class="testimonio-meta">
+                            <span class="estrellas" role="img" aria-label="4 de 5 estrellas">★★★★☆</span>
+                            <span class="testimonio-fecha">junio de 2026</span>
+                            <span class="etiqueta-origen"><svg aria-hidden="true" focusable="false"><use href="#logo-google"></use></svg>Google</span>
+                        </div>
+                        <blockquote>
+                            Excelente experiencia y guías muy preparados. Solo mejoraría la información previa
+                            sobre el equipo que se necesita llevar; por lo demás, muy buen viaje.
+                        </blockquote>
+                        <p class="respuesta">
+                            <strong>Respuesta de la agencia</strong>
+                            Gracias por tu sugerencia, Andrés. Ya enviamos una lista de equipo más detallada a los viajeros.
+                        </p>
+                    </li>
+
+                    <li class="testimonio" data-origen="cliente">
+                        <div class="testimonio-cabecera">
+                            <span class="iniciales" aria-hidden="true">MH</span>
+                            <div>
+                                <p class="testimonio-autor">María Hernández</p>
+                                <p class="testimonio-viaje">Escapada de fin de semana</p>
+                            </div>
+                        </div>
+                        <div class="testimonio-meta">
+                            <span class="estrellas" role="img" aria-label="5 de 5 estrellas">★★★★★</span>
+                            <span class="testimonio-fecha">mayo de 2026</span>
+                            <span class="etiqueta-origen">Cliente</span>
+                        </div>
+                        <blockquote>
+                            Viajo con movilidad reducida y me asesoraron con mucho respeto para elegir
+                            hoteles y actividades accesibles. Me sentí cuidada en todo momento.
+                        </blockquote>
+                    </li>
+
+                    <li class="testimonio" data-origen="cliente">
+                        <div class="testimonio-cabecera">
+                            <span class="iniciales" aria-hidden="true">DT</span>
+                            <div>
+                                <p class="testimonio-autor">Diego Torres</p>
+                                <p class="testimonio-viaje">Tíbet espiritual</p>
+                            </div>
+                        </div>
+                        <div class="testimonio-meta">
+                            <span class="estrellas" role="img" aria-label="4 de 5 estrellas">★★★★☆</span>
+                            <span class="testimonio-fecha">abril de 2026</span>
+                            <span class="etiqueta-origen">Cliente</span>
+                        </div>
+                        <blockquote>
+                            Un viaje que cambia la forma de ver las cosas. La altura es exigente, pero el
+                            equipo nos acompañó y nos explicó cada paso con paciencia.
+                        </blockquote>
+                    </li>
+                </ul>
+
+                <!-- ===== FIN PARTE A ===== -->
+
+                <!-- ===== PARTE B: COMENTARIOS (comentarios.css / comentarios.js) — formulario de clientes ===== -->
+                <div class="comentarios">
+                    <h3 id="titulo-comentarios">Cuéntanos tu experiencia</h3>
+                    <p class="testimonios-intro">
+                        Tu opinión ayuda a otros viajeros a decidir y a nosotros a mejorar.
+                        Los campos marcados con <span aria-hidden="true">*</span><span class="solo-lectores">asterisco</span> son obligatorios.
+                    </p>
+
+                    <form id="form-comentario" aria-labelledby="titulo-comentarios" novalidate>
+                        <label for="nombre">Nombre *</label>
+                        <input type="text" id="nombre" name="nombre" maxlength="60" autocomplete="name"
+                               aria-describedby="error-nombre" required>
+                        <p class="error-campo" id="error-nombre" hidden></p>
+
+                        <label for="destino">Viaje que realizaste *</label>
+                        <select id="destino" name="destino" aria-describedby="error-destino" required>
+                            <option value="">Selecciona una opción</option>
+                            <option>Crucero por el Caribe</option>
+                            <option>Tour por Europa</option>
+                            <option>Aventura en la montaña</option>
+                            <option>Escapada de fin de semana</option>
+                            <option>Inglaterra clásica</option>
+                            <option>Safari en África</option>
+                            <option>Tíbet espiritual</option>
+                            <option>París romántico</option>
+                        </select>
+                        <p class="error-campo" id="error-destino" hidden></p>
+
+                        <fieldset aria-describedby="error-valoracion">
+                            <legend>Tu valoración *</legend>
+                            <div class="valorar">
+                                <input type="radio" name="valoracion" id="val5" value="5"><label for="val5" title="5 estrellas">★<span class="solo-lectores">5 estrellas, excelente</span></label>
+                                <input type="radio" name="valoracion" id="val4" value="4"><label for="val4" title="4 estrellas">★<span class="solo-lectores">4 estrellas, muy bueno</span></label>
+                                <input type="radio" name="valoracion" id="val3" value="3"><label for="val3" title="3 estrellas">★<span class="solo-lectores">3 estrellas, bueno</span></label>
+                                <input type="radio" name="valoracion" id="val2" value="2"><label for="val2" title="2 estrellas">★<span class="solo-lectores">2 estrellas, regular</span></label>
+                                <input type="radio" name="valoracion" id="val1" value="1"><label for="val1" title="1 estrella">★<span class="solo-lectores">1 estrella, malo</span></label>
+                            </div>
+                            <p class="error-campo" id="error-valoracion" hidden></p>
+                        </fieldset>
+
+                        <label for="comentario">Tu comentario *</label>
+                        <textarea id="comentario" name="comentario" rows="5" maxlength="500"
+                                  aria-describedby="ayuda-comentario contador-comentario error-comentario" required></textarea>
+                        <p class="ayuda" id="ayuda-comentario">Mínimo 10 caracteres.</p>
+                        <p class="contador" id="contador-comentario" aria-live="off">0 / 500</p>
+                        <p class="error-campo" id="error-comentario" hidden></p>
+
+                        <button type="submit">Publicar comentario</button>
+                    </form>
+                    <p class="mensaje-envio" id="mensaje-envio" role="status" aria-live="polite"></p>
+
+                    <p class="aviso-demo">
+                        Las reseñas y los datos de Google que se muestran arriba son ficticios y sirven
+                        de ejemplo. Los comentarios nuevos se guardan solo en este navegador.
+                    </p>
+                </div>
+                <!-- ===== FIN PARTE B ===== -->
+            </section>
 
         <!-- Contacto -->
         <section id="contacto">
@@ -129,5 +369,7 @@
         <p class="derechos">&copy; 2026 Explora el Mundo. Todos los derechos reservados.</p>
     </footer>
 
+        <script src="resenas.js"></script>
+        <script src="comentarios.js"></script>
 </body>
 </html>

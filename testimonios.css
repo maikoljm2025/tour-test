@@ -1,0 +1,40 @@
+/* Base compartida de la sección de testimonios (rara vez se toca).
+   Reutiliza .testimonios, .testimonio, .estrellas y .subtitulo de styles.css.
+   Parte A (reseñas): resenas.css  |  Parte B (comentarios): comentarios.css */
+
+.solo-lectores {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+#testimonios {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4px 20px;
+    background-color: #fff;
+    color: #1b1b1b;
+}
+
+#testimonios :focus-visible {
+    outline: 3px solid #005f99;
+    outline-offset: 2px;
+}
+
+#testimonios .estrellas {
+    color: #b35900;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.testimonios-intro {
+    max-width: 65ch;
+    line-height: 1.5;
+}
+
