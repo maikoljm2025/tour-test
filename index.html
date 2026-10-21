@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Explora el Mundo | Agencia de viajes y tours</title>
     <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="testimonios.css">
-        <link rel="stylesheet" href="resenas.css">
-        <link rel="stylesheet" href="comentarios.css">
+    <link rel="stylesheet" href="testimonios.css">
+    <link rel="stylesheet" href="resenas.css">
+    <link rel="stylesheet" href="comentarios.css">
 </head>
 <body>
 
@@ -66,134 +66,134 @@
             </div>
         </section>
 
-            <!-- ===== TESTIMONIOS (rama feature/testimonios) ===== -->
-            <section id="testimonios" aria-labelledby="titulo-testimonios">
-                <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-                    <symbol id="logo-google" viewBox="0 0 48 48">
-                        <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
-                        <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
-                        <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
-                        <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
-                    </symbol>
-                </svg>
+        <!-- ===== TESTIMONIOS ===== -->
+        <section id="testimonios" aria-labelledby="titulo-testimonios">
+            <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+                <symbol id="logo-google" viewBox="0 0 48 48">
+                    <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                    <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                    <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                    <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                </symbol>
+            </svg>
 
-                <h2 class="subtitulo" id="titulo-testimonios">Lo que dicen nuestros viajeros</h2>
-                <p class="testimonios-intro">
-                    Cada viaje es una historia. Lee las opiniones de quienes ya viajaron con nosotros
-                    y cuéntanos la tuya.
-                </p>
+            <h2 class="subtitulo" id="titulo-testimonios">Lo que dicen nuestros viajeros</h2>
+            <p class="testimonios-intro">
+                Cada viaje es una historia. Lee las opiniones de quienes ya viajaron con nosotros
+                y cuéntanos la tuya.
+            </p>
 
-                <!-- ===== PARTE A: RESEÑAS (resenas.css / resenas.js) — resumen de Google, filtros y tarjetas ===== -->
+            <!-- ===== PARTE A: RESEÑAS (resenas.css / resenas.js) — resumen de Google, filtros y tarjetas ===== -->
 
-                <!-- Resumen de reseñas de Google: lo calcula resenas.js a partir de los datos de ejemplo -->
-                <div class="resumen-google">
-                    <div class="resumen-nota">
-                        <strong id="resumen-nota"></strong>
-                        <p><span class="estrellas" id="resumen-estrellas" role="img"></span></p>
-                        <p class="google-marca">
-                            <svg aria-hidden="true" focusable="false"><use href="#logo-google"></use></svg>
-                            <span id="resumen-total"></span>
-                        </p>
-                    </div>
-
-                    <ul class="distribucion" id="distribucion" aria-label="Distribución de las reseñas de Google"></ul>
-
-                    <button type="button" class="boton-google" id="ver-todas">Ver todas las reseñas de Google</button>
+            <!-- Resumen de reseñas de Google: lo calcula resenas.js a partir de los datos de ejemplo -->
+            <div class="resumen-google">
+                <div class="resumen-nota">
+                    <strong id="resumen-nota"></strong>
+                    <p><span class="estrellas" id="resumen-estrellas" role="img"></span></p>
+                    <p class="google-marca">
+                        <svg aria-hidden="true" focusable="false"><use href="#logo-google"></use></svg>
+                        <span id="resumen-total"></span>
+                    </p>
                 </div>
 
-                <!-- Filtros y orden -->
-                <div class="barra-lista">
-                    <fieldset class="filtros" id="filtros">
-                        <legend>Mostrar:</legend>
-                        <button type="button" data-filtro="todos" aria-pressed="true">Todas</button>
-                        <button type="button" data-filtro="google" aria-pressed="false">Google</button>
-                        <button type="button" data-filtro="cliente" aria-pressed="false">Comentarios de clientes</button>
+                <ul class="distribucion" id="distribucion" aria-label="Distribución de las reseñas de Google"></ul>
+
+                <button type="button" class="boton-google" id="ver-todas">Ver todas las reseñas de Google</button>
+            </div>
+
+            <!-- Filtros y orden -->
+            <div class="barra-lista">
+                <fieldset class="filtros" id="filtros">
+                    <legend>Mostrar:</legend>
+                    <button type="button" data-filtro="todos" aria-pressed="true">Todas</button>
+                    <button type="button" data-filtro="google" aria-pressed="false">Google</button>
+                    <button type="button" data-filtro="cliente" aria-pressed="false">Comentarios de clientes</button>
+                </fieldset>
+
+                <div class="orden">
+                    <label for="orden">Ordenar por</label>
+                    <select id="orden">
+                        <option value="recientes">Más recientes</option>
+                        <option value="mejores">Mejor valoradas</option>
+                    </select>
+                </div>
+            </div>
+            <p class="estado-filtro" id="estado-filtro" role="status" aria-live="polite"></p>
+
+            <!-- Tarjetas: las genera resenas.js -->
+            <ul class="testimonios" id="lista-testimonios"></ul>
+            <noscript><p>Activa JavaScript para ver las opiniones de nuestros viajeros.</p></noscript>
+
+            <p class="ver-mas">
+                <button type="button" id="ver-mas" hidden>Ver más opiniones</button>
+            </p>
+
+            <!-- ===== FIN PARTE A ===== -->
+
+            <!-- ===== PARTE B: COMENTARIOS (comentarios.css / comentarios.js) — formulario de clientes ===== -->
+            <div class="comentarios">
+                <h3 id="titulo-comentarios">Cuéntanos tu experiencia</h3>
+                <p class="testimonios-intro">
+                    Tu opinión ayuda a otros viajeros a decidir y a nosotros a mejorar.
+                    Los campos marcados con <span aria-hidden="true">*</span><span class="solo-lectores">asterisco</span> son obligatorios.
+                </p>
+
+                <form id="form-comentario" aria-labelledby="titulo-comentarios" novalidate>
+                    <label for="comentario-nombre">Nombre *</label>
+                    <input type="text" id="comentario-nombre" name="nombre" maxlength="60" autocomplete="name"
+                           aria-describedby="error-nombre" required>
+                    <p class="error-campo" id="error-nombre" hidden></p>
+
+                    <label for="destino">Viaje que realizaste *</label>
+                    <select id="destino" name="destino" aria-describedby="error-destino" required>
+                        <option value="">Selecciona una opción</option>
+                        <option>Crucero por el Caribe</option>
+                        <option>Tour por Europa</option>
+                        <option>Aventura en la montaña</option>
+                        <option>Escapada de fin de semana</option>
+                        <option>Inglaterra clásica</option>
+                        <option>Safari en África</option>
+                        <option>Tíbet espiritual</option>
+                        <option>París romántico</option>
+                    </select>
+                    <p class="error-campo" id="error-destino" hidden></p>
+
+                    <fieldset>
+                        <legend>Tu valoración *</legend>
+                        <div class="valorar">
+                            <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val1" value="1"><label for="val1" title="1 estrella"><span aria-hidden="true">★</span><span class="solo-lectores">1 estrella, malo</span></label>
+                            <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val2" value="2"><label for="val2" title="2 estrellas"><span aria-hidden="true">★</span><span class="solo-lectores">2 estrellas, regular</span></label>
+                            <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val3" value="3"><label for="val3" title="3 estrellas"><span aria-hidden="true">★</span><span class="solo-lectores">3 estrellas, bueno</span></label>
+                            <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val4" value="4"><label for="val4" title="4 estrellas"><span aria-hidden="true">★</span><span class="solo-lectores">4 estrellas, muy bueno</span></label>
+                            <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val5" value="5"><label for="val5" title="5 estrellas"><span aria-hidden="true">★</span><span class="solo-lectores">5 estrellas, excelente</span></label>
+                        </div>
+                        <p class="error-campo" id="error-valoracion" hidden></p>
                     </fieldset>
 
-                    <div class="orden">
-                        <label for="orden">Ordenar por</label>
-                        <select id="orden">
-                            <option value="recientes">Más recientes</option>
-                            <option value="mejores">Mejor valoradas</option>
-                        </select>
+                    <label for="comentario">Tu comentario *</label>
+                    <textarea id="comentario" name="comentario" rows="5" maxlength="500"
+                              aria-describedby="ayuda-comentario contador-comentario error-comentario" required></textarea>
+                    <p class="ayuda" id="ayuda-comentario">Mínimo 10 caracteres.</p>
+                    <p class="contador" id="contador-comentario" aria-live="off">0 / 500</p>
+                    <p class="error-campo" id="error-comentario" hidden></p>
+
+                    <!-- Campo trampa anti-spam: invisible para personas, los bots suelen llenarlo -->
+                    <div class="campo-trampa" aria-hidden="true">
+                        <label for="sitio-web">No llenes este campo</label>
+                        <input type="text" id="sitio-web" name="sitio_web" tabindex="-1" autocomplete="off">
                     </div>
-                </div>
-                <p class="estado-filtro" id="estado-filtro" role="status" aria-live="polite"></p>
 
-                <!-- Tarjetas: las genera resenas.js -->
-                <ul class="testimonios" id="lista-testimonios"></ul>
-                <noscript><p>Activa JavaScript para ver las opiniones de nuestros viajeros.</p></noscript>
+                    <button type="submit">Publicar comentario</button>
+                </form>
+                <p class="mensaje-envio" id="mensaje-envio" role="status" aria-live="polite" tabindex="-1"></p>
 
-                <p class="ver-mas">
-                    <button type="button" id="ver-mas" hidden>Ver más opiniones</button>
+                <p class="aviso-demo">
+                    Las reseñas y los datos de Google que se muestran arriba son ficticios y sirven
+                    de ejemplo. Los comentarios nuevos se guardan solo en este navegador.
                 </p>
-
-                <!-- ===== FIN PARTE A ===== -->
-
-                <!-- ===== PARTE B: COMENTARIOS (comentarios.css / comentarios.js) — formulario de clientes ===== -->
-                <div class="comentarios">
-                    <h3 id="titulo-comentarios">Cuéntanos tu experiencia</h3>
-                    <p class="testimonios-intro">
-                        Tu opinión ayuda a otros viajeros a decidir y a nosotros a mejorar.
-                        Los campos marcados con <span aria-hidden="true">*</span><span class="solo-lectores">asterisco</span> son obligatorios.
-                    </p>
-
-                    <form id="form-comentario" aria-labelledby="titulo-comentarios" novalidate>
-                        <label for="nombre">Nombre *</label>
-                        <input type="text" id="nombre" name="nombre" maxlength="60" autocomplete="name"
-                               aria-describedby="error-nombre" required>
-                        <p class="error-campo" id="error-nombre" hidden></p>
-
-                        <label for="destino">Viaje que realizaste *</label>
-                        <select id="destino" name="destino" aria-describedby="error-destino" required>
-                            <option value="">Selecciona una opción</option>
-                            <option>Crucero por el Caribe</option>
-                            <option>Tour por Europa</option>
-                            <option>Aventura en la montaña</option>
-                            <option>Escapada de fin de semana</option>
-                            <option>Inglaterra clásica</option>
-                            <option>Safari en África</option>
-                            <option>Tíbet espiritual</option>
-                            <option>París romántico</option>
-                        </select>
-                        <p class="error-campo" id="error-destino" hidden></p>
-
-                        <fieldset>
-                            <legend>Tu valoración *</legend>
-                            <div class="valorar">
-                                <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val1" value="1"><label for="val1" title="1 estrella"><span aria-hidden="true">★</span><span class="solo-lectores">1 estrella, malo</span></label>
-                                <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val2" value="2"><label for="val2" title="2 estrellas"><span aria-hidden="true">★</span><span class="solo-lectores">2 estrellas, regular</span></label>
-                                <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val3" value="3"><label for="val3" title="3 estrellas"><span aria-hidden="true">★</span><span class="solo-lectores">3 estrellas, bueno</span></label>
-                                <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val4" value="4"><label for="val4" title="4 estrellas"><span aria-hidden="true">★</span><span class="solo-lectores">4 estrellas, muy bueno</span></label>
-                                <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val5" value="5"><label for="val5" title="5 estrellas"><span aria-hidden="true">★</span><span class="solo-lectores">5 estrellas, excelente</span></label>
-                            </div>
-                            <p class="error-campo" id="error-valoracion" hidden></p>
-                        </fieldset>
-
-                        <label for="comentario">Tu comentario *</label>
-                        <textarea id="comentario" name="comentario" rows="5" maxlength="500"
-                                  aria-describedby="ayuda-comentario contador-comentario error-comentario" required></textarea>
-                        <p class="ayuda" id="ayuda-comentario">Mínimo 10 caracteres.</p>
-                        <p class="contador" id="contador-comentario" aria-live="off">0 / 500</p>
-                        <p class="error-campo" id="error-comentario" hidden></p>
-
-                        <!-- Campo trampa anti-spam: invisible para personas, los bots suelen llenarlo -->
-                        <div class="campo-trampa" aria-hidden="true">
-                            <label for="sitio-web">No llenes este campo</label>
-                            <input type="text" id="sitio-web" name="sitio_web" tabindex="-1" autocomplete="off">
-                        </div>
-
-                        <button type="submit">Publicar comentario</button>
-                    </form>
-                    <p class="mensaje-envio" id="mensaje-envio" role="status" aria-live="polite" tabindex="-1"></p>
-
-                    <p class="aviso-demo">
-                        Las reseñas y los datos de Google que se muestran arriba son ficticios y sirven
-                        de ejemplo. Los comentarios nuevos se guardan solo en este navegador.
-                    </p>
-                </div>
-                <!-- ===== FIN PARTE B ===== -->
-            </section>
+            </div>
+            <!-- ===== FIN PARTE B ===== -->
+        </section>
 
         <!-- Contacto -->
         <section id="contacto">
@@ -239,8 +239,8 @@
         <p class="derechos">&copy; 2026 Explora el Mundo. Todos los derechos reservados.</p>
     </footer>
 
-        <script src="avatares.js"></script>
-        <script src="resenas.js"></script>
-        <script src="comentarios.js"></script>
+    <script src="avatares.js"></script>
+    <script src="resenas.js"></script>
+    <script src="comentarios.js"></script>
 </body>
 </html>
