@@ -85,184 +85,48 @@
 
                 <!-- ===== PARTE A: RESEÑAS (resenas.css / resenas.js) — resumen de Google, filtros y tarjetas ===== -->
 
-                <!-- Resumen de reseñas de Google (datos de ejemplo) -->
+                <!-- Resumen de reseñas de Google: lo calcula resenas.js a partir de los datos de ejemplo -->
                 <div class="resumen-google">
                     <div class="resumen-nota">
-                        <strong>4,7</strong>
-                        <p><span class="estrellas" role="img" aria-label="4,7 de 5 estrellas">★★★★★</span></p>
+                        <strong id="resumen-nota"></strong>
+                        <p><span class="estrellas" id="resumen-estrellas" role="img"></span></p>
                         <p class="google-marca">
                             <svg aria-hidden="true" focusable="false"><use href="#logo-google"></use></svg>
-                            126 reseñas en Google
+                            <span id="resumen-total"></span>
                         </p>
                     </div>
 
-                    <ul class="distribucion" aria-label="Distribución de las reseñas de Google">
-                        <li>
-                            <span>5 estrellas</span>
-                            <progress max="100" value="82" aria-label="5 estrellas: 82 %"></progress>
-                            <span>82 %</span>
-                        </li>
-                        <li>
-                            <span>4 estrellas</span>
-                            <progress max="100" value="12" aria-label="4 estrellas: 12 %"></progress>
-                            <span>12 %</span>
-                        </li>
-                        <li>
-                            <span>3 estrellas</span>
-                            <progress max="100" value="4" aria-label="3 estrellas: 4 %"></progress>
-                            <span>4 %</span>
-                        </li>
-                        <li>
-                            <span>2 estrellas</span>
-                            <progress max="100" value="2" aria-label="2 estrellas: 2 %"></progress>
-                            <span>2 %</span>
-                        </li>
-                        <li>
-                            <span>1 estrella</span>
-                            <progress max="100" value="1" aria-label="1 estrella: 1 %"></progress>
-                            <span>1 %</span>
-                        </li>
-                    </ul>
+                    <ul class="distribucion" id="distribucion" aria-label="Distribución de las reseñas de Google"></ul>
 
-                    <!-- TODO: reemplazar por el enlace real de la ficha de Google de la agencia -->
-                    <a class="boton-google" href="https://www.google.com/maps" target="_blank" rel="noopener noreferrer">
-                        Ver todas en Google<span class="solo-lectores"> (se abre en una pestaña nueva)</span>
-                    </a>
+                    <button type="button" class="boton-google" id="ver-todas">Ver todas las reseñas de Google</button>
                 </div>
 
-                <!-- Filtros -->
-                <fieldset class="filtros" id="filtros">
-                    <legend>Mostrar:</legend>
-                    <button type="button" data-filtro="todos" aria-pressed="true">Todas</button>
-                    <button type="button" data-filtro="google" aria-pressed="false">Google</button>
-                    <button type="button" data-filtro="cliente" aria-pressed="false">Comentarios de clientes</button>
-                </fieldset>
+                <!-- Filtros y orden -->
+                <div class="barra-lista">
+                    <fieldset class="filtros" id="filtros">
+                        <legend>Mostrar:</legend>
+                        <button type="button" data-filtro="todos" aria-pressed="true">Todas</button>
+                        <button type="button" data-filtro="google" aria-pressed="false">Google</button>
+                        <button type="button" data-filtro="cliente" aria-pressed="false">Comentarios de clientes</button>
+                    </fieldset>
+
+                    <div class="orden">
+                        <label for="orden">Ordenar por</label>
+                        <select id="orden">
+                            <option value="recientes">Más recientes</option>
+                            <option value="mejores">Mejor valoradas</option>
+                        </select>
+                    </div>
+                </div>
                 <p class="estado-filtro" id="estado-filtro" role="status" aria-live="polite"></p>
 
-                <!-- Tarjetas (contenido de ejemplo) -->
-                <ul class="testimonios" id="lista-testimonios">
-                    <li class="testimonio" data-origen="google">
-                        <div class="testimonio-cabecera">
-                            <span class="iniciales" aria-hidden="true">LM</span>
-                            <div>
-                                <p class="testimonio-autor">Laura Méndez</p>
-                                <p class="testimonio-viaje">Crucero por el Caribe</p>
-                            </div>
-                        </div>
-                        <div class="testimonio-meta">
-                            <span class="estrellas" role="img" aria-label="5 de 5 estrellas">★★★★★</span>
-                            <span class="testimonio-fecha">septiembre de 2026</span>
-                            <span class="etiqueta-origen"><svg aria-hidden="true" focusable="false"><use href="#logo-google"></use></svg>Google</span>
-                        </div>
-                        <blockquote>
-                            Todo estuvo perfectamente organizado: traslados, excursiones y hasta una cena
-                            sorpresa por nuestro aniversario. Volveremos a viajar con ellos sin dudarlo.
-                        </blockquote>
-                    </li>
+                <!-- Tarjetas: las genera resenas.js -->
+                <ul class="testimonios" id="lista-testimonios"></ul>
+                <noscript><p>Activa JavaScript para ver las opiniones de nuestros viajeros.</p></noscript>
 
-                    <li class="testimonio" data-origen="google">
-                        <div class="testimonio-cabecera">
-                            <span class="iniciales" aria-hidden="true">CR</span>
-                            <div>
-                                <p class="testimonio-autor">Carlos Ramírez</p>
-                                <p class="testimonio-viaje">Tour por Europa</p>
-                            </div>
-                        </div>
-                        <div class="testimonio-meta">
-                            <span class="estrellas" role="img" aria-label="5 de 5 estrellas">★★★★★</span>
-                            <span class="testimonio-fecha">agosto de 2026</span>
-                            <span class="etiqueta-origen"><svg aria-hidden="true" focusable="false"><use href="#logo-google"></use></svg>Google</span>
-                        </div>
-                        <blockquote>
-                            Recorrimos seis países en dos semanas y nunca sentimos prisa. El guía conocía
-                            rincones que ninguna app te recomienda. Totalmente recomendado.
-                        </blockquote>
-                        <p class="respuesta">
-                            <strong>Respuesta de la agencia</strong>
-                            ¡Gracias, Carlos! Nos alegra que disfrutaras la ruta. ¡Te esperamos en el próximo viaje!
-                        </p>
-                    </li>
-
-                    <li class="testimonio" data-origen="google">
-                        <div class="testimonio-cabecera">
-                            <span class="iniciales" aria-hidden="true">SP</span>
-                            <div>
-                                <p class="testimonio-autor">Sofía Pérez</p>
-                                <p class="testimonio-viaje">Safari en África</p>
-                            </div>
-                        </div>
-                        <div class="testimonio-meta">
-                            <span class="estrellas" role="img" aria-label="5 de 5 estrellas">★★★★★</span>
-                            <span class="testimonio-fecha">julio de 2026</span>
-                            <span class="etiqueta-origen"><svg aria-hidden="true" focusable="false"><use href="#logo-google"></use></svg>Google</span>
-                        </div>
-                        <blockquote>
-                            Ver a los elefantes al amanecer fue lo más impresionante que he vivido. El
-                            alojamiento superó mis expectativas y el equipo estuvo pendiente de todo.
-                        </blockquote>
-                    </li>
-
-                    <li class="testimonio" data-origen="google">
-                        <div class="testimonio-cabecera">
-                            <span class="iniciales" aria-hidden="true">AG</span>
-                            <div>
-                                <p class="testimonio-autor">Andrés Gómez</p>
-                                <p class="testimonio-viaje">Aventura en la montaña</p>
-                            </div>
-                        </div>
-                        <div class="testimonio-meta">
-                            <span class="estrellas" role="img" aria-label="4 de 5 estrellas">★★★★☆</span>
-                            <span class="testimonio-fecha">junio de 2026</span>
-                            <span class="etiqueta-origen"><svg aria-hidden="true" focusable="false"><use href="#logo-google"></use></svg>Google</span>
-                        </div>
-                        <blockquote>
-                            Excelente experiencia y guías muy preparados. Solo mejoraría la información previa
-                            sobre el equipo que se necesita llevar; por lo demás, muy buen viaje.
-                        </blockquote>
-                        <p class="respuesta">
-                            <strong>Respuesta de la agencia</strong>
-                            Gracias por tu sugerencia, Andrés. Ya enviamos una lista de equipo más detallada a los viajeros.
-                        </p>
-                    </li>
-
-                    <li class="testimonio" data-origen="cliente">
-                        <div class="testimonio-cabecera">
-                            <span class="iniciales" aria-hidden="true">MH</span>
-                            <div>
-                                <p class="testimonio-autor">María Hernández</p>
-                                <p class="testimonio-viaje">Escapada de fin de semana</p>
-                            </div>
-                        </div>
-                        <div class="testimonio-meta">
-                            <span class="estrellas" role="img" aria-label="5 de 5 estrellas">★★★★★</span>
-                            <span class="testimonio-fecha">mayo de 2026</span>
-                            <span class="etiqueta-origen">Cliente</span>
-                        </div>
-                        <blockquote>
-                            Viajo con movilidad reducida y me asesoraron con mucho respeto para elegir
-                            hoteles y actividades accesibles. Me sentí cuidada en todo momento.
-                        </blockquote>
-                    </li>
-
-                    <li class="testimonio" data-origen="cliente">
-                        <div class="testimonio-cabecera">
-                            <span class="iniciales" aria-hidden="true">DT</span>
-                            <div>
-                                <p class="testimonio-autor">Diego Torres</p>
-                                <p class="testimonio-viaje">Tíbet espiritual</p>
-                            </div>
-                        </div>
-                        <div class="testimonio-meta">
-                            <span class="estrellas" role="img" aria-label="4 de 5 estrellas">★★★★☆</span>
-                            <span class="testimonio-fecha">abril de 2026</span>
-                            <span class="etiqueta-origen">Cliente</span>
-                        </div>
-                        <blockquote>
-                            Un viaje que cambia la forma de ver las cosas. La altura es exigente, pero el
-                            equipo nos acompañó y nos explicó cada paso con paciencia.
-                        </blockquote>
-                    </li>
-                </ul>
+                <p class="ver-mas">
+                    <button type="button" id="ver-mas" hidden>Ver más opiniones</button>
+                </p>
 
                 <!-- ===== FIN PARTE A ===== -->
 
@@ -375,6 +239,7 @@
         <p class="derechos">&copy; 2026 Explora el Mundo. Todos los derechos reservados.</p>
     </footer>
 
+        <script src="avatares.js"></script>
         <script src="resenas.js"></script>
         <script src="comentarios.js"></script>
 </body>
