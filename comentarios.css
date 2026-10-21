@@ -27,7 +27,7 @@
     box-sizing: border-box;
     margin: 10px 0 0;
     padding: 8px 12px 12px;
-    border: 1px solid #8aa4a9;
+    border: 1px solid #5f7a80;
     border-radius: 5px;
 }
 
@@ -53,7 +53,13 @@
     padding: 8px;
     margin-top: 5px;
     box-sizing: border-box;
-    font-size: 14px;
+}
+
+/* 16 px evita que Safari en iPhone haga zoom al tocar un campo */
+#form-comentario input,
+#form-comentario select,
+#form-comentario textarea {
+    font-size: 16px;
 }
 
 #form-comentario [aria-invalid="true"] {
@@ -69,9 +75,8 @@
 }
 
 .valorar {
+    position: relative;
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
     gap: 4px;
     margin-top: 4px;
 }
@@ -90,14 +95,20 @@
     margin: 0;
     font-size: 2em;
     line-height: 1;
-    color: #8aa4a9;
+    color: #5f7a80;
     cursor: pointer;
 }
 
-.valorar input:checked ~ label,
-.valorar label:hover,
-.valorar label:hover ~ label {
+/* Las estrellas van de 1 a 5 (igual que las flechas del teclado): se pintan todas
+   y se apagan las que quedan después de la elegida o de la que tiene el puntero. */
+.valorar:has(input:checked) label,
+.valorar:hover label {
     color: #b35900;
+}
+
+.valorar:not(:hover) input:checked + label ~ label,
+.valorar:hover label:hover ~ label {
+    color: #5f7a80;
 }
 
 .valorar input:focus-visible + label {
@@ -122,6 +133,44 @@
     margin: 10px 0 0;
     font-weight: bold;
     color: #014d2d;
+}
+
+.campo-trampa {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Palabras muy largas sin espacios no deben salirse de la tarjeta */
+.testimonio[data-origen="cliente"] .testimonio-autor,
+.testimonio[data-origen="cliente"] blockquote {
+    overflow-wrap: anywhere;
+}
+
+.testimonio[data-origen="cliente"]:focus {
+    outline: 3px solid #005f99;
+    outline-offset: 2px;
+}
+
+.boton-eliminar {
+    align-self: flex-end;
+    min-height: 44px;
+    margin-top: 8px;
+    padding: 8px 16px;
+    border: 2px solid #b00020;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #b00020;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boton-eliminar:hover {
+    background-color: #b00020;
+    color: #fff;
 }
 
 .aviso-demo {

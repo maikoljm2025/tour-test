@@ -294,14 +294,14 @@
                         </select>
                         <p class="error-campo" id="error-destino" hidden></p>
 
-                        <fieldset aria-describedby="error-valoracion">
+                        <fieldset>
                             <legend>Tu valoración *</legend>
                             <div class="valorar">
-                                <input type="radio" name="valoracion" id="val5" value="5"><label for="val5" title="5 estrellas">★<span class="solo-lectores">5 estrellas, excelente</span></label>
-                                <input type="radio" name="valoracion" id="val4" value="4"><label for="val4" title="4 estrellas">★<span class="solo-lectores">4 estrellas, muy bueno</span></label>
-                                <input type="radio" name="valoracion" id="val3" value="3"><label for="val3" title="3 estrellas">★<span class="solo-lectores">3 estrellas, bueno</span></label>
-                                <input type="radio" name="valoracion" id="val2" value="2"><label for="val2" title="2 estrellas">★<span class="solo-lectores">2 estrellas, regular</span></label>
-                                <input type="radio" name="valoracion" id="val1" value="1"><label for="val1" title="1 estrella">★<span class="solo-lectores">1 estrella, malo</span></label>
+                                <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val1" value="1"><label for="val1" title="1 estrella"><span aria-hidden="true">★</span><span class="solo-lectores">1 estrella, malo</span></label>
+                                <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val2" value="2"><label for="val2" title="2 estrellas"><span aria-hidden="true">★</span><span class="solo-lectores">2 estrellas, regular</span></label>
+                                <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val3" value="3"><label for="val3" title="3 estrellas"><span aria-hidden="true">★</span><span class="solo-lectores">3 estrellas, bueno</span></label>
+                                <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val4" value="4"><label for="val4" title="4 estrellas"><span aria-hidden="true">★</span><span class="solo-lectores">4 estrellas, muy bueno</span></label>
+                                <input type="radio" name="valoracion" aria-describedby="error-valoracion" id="val5" value="5"><label for="val5" title="5 estrellas"><span aria-hidden="true">★</span><span class="solo-lectores">5 estrellas, excelente</span></label>
                             </div>
                             <p class="error-campo" id="error-valoracion" hidden></p>
                         </fieldset>
@@ -313,9 +313,15 @@
                         <p class="contador" id="contador-comentario" aria-live="off">0 / 500</p>
                         <p class="error-campo" id="error-comentario" hidden></p>
 
+                        <!-- Campo trampa anti-spam: invisible para personas, los bots suelen llenarlo -->
+                        <div class="campo-trampa" aria-hidden="true">
+                            <label for="sitio-web">No llenes este campo</label>
+                            <input type="text" id="sitio-web" name="sitio_web" tabindex="-1" autocomplete="off">
+                        </div>
+
                         <button type="submit">Publicar comentario</button>
                     </form>
-                    <p class="mensaje-envio" id="mensaje-envio" role="status" aria-live="polite"></p>
+                    <p class="mensaje-envio" id="mensaje-envio" role="status" aria-live="polite" tabindex="-1"></p>
 
                     <p class="aviso-demo">
                         Las reseñas y los datos de Google que se muestran arriba son ficticios y sirven
