@@ -1,3 +1,4 @@
+/* ========== GENERAL ========== */
 html {
     scroll-behavior: smooth;
 }
@@ -6,13 +7,27 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #ffffff;
+    color: #222222;
 }
 
-header{
+/* ========== HEADER + NAVBAR ========== */
+header {
     background-color: #005f99;
-    color: white;
-    padding: 10px;
+    color: #ffffff;
+    padding: 15px 10px 0;
     text-align: center;
+    border-bottom: 4px solid #2e9e5b;
+}
+
+header h1 {
+    margin: 0;
+}
+
+.lema {
+    margin: 5px 0 10px;
+    font-size: 0.95em;
+    opacity: 0.9;
 }
 
 nav ul {
@@ -21,22 +36,29 @@ nav ul {
     margin: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
-nav li{
-    margin: 15px;
+nav li {
+    margin: 0 5px;
 }
 
 .enlace {
-    color: white;
+    display: block;
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
+    padding: 12px 18px;
+    border-bottom: 3px solid transparent;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .enlace:hover {
-    text-decoration: underline;
+    background-color: #2e9e5b;
+    border-bottom-color: #ffffff;
 }
 
+/* ========== MAIN ========== */
 main {
     padding: 20px;
 }
@@ -50,9 +72,11 @@ main {
 .galeria img {
     width: 30%;
     margin: 1%;
+    border-radius: 5px;
 }
 
-.paquetes{
+/* ========== PAQUETES ========== */
+.paquetes {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -74,7 +98,7 @@ main {
     transition: transform 0.3s ease-in-out;
 }
 
-.paquete img:hover{
+.paquete img:hover {
     transform: scale(1.1);
 }
 
@@ -83,7 +107,7 @@ main {
     color: #014d2d;
 }
 
-.paquete p{
+.paquete p {
     margin: 5px 0;
 }
 
@@ -92,6 +116,7 @@ main {
     font-size: 1.4em;
 }
 
+/* ========== TESTIMONIOS ========== */
 .testimonios {
     display: flex;
     flex-wrap: wrap;
@@ -121,18 +146,7 @@ main {
     align-self: flex-end;
 }
 
-footer {
-    background-color: #005f99;
-    color: white;
-    text-align: center;
-    width: 100%;
-    padding: 10px;
-}
-
-footer h2, footer p {
-    margin: 5px 0;
-}
-
+/* ========== FORMULARIO ========== */
 form {
     display: flex;
     flex-direction: column;
@@ -148,7 +162,8 @@ form label {
     font-size: 14px;
 }
 
-form input, form textarea {
+form input,
+form textarea {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
@@ -158,16 +173,90 @@ form input, form textarea {
 
 form button {
     width: auto;
-    background-color: #ffa500;
-    color: white;
+    background-color: #2e9e5b;
+    color: #ffffff;
     border: none;
-    padding: 5px 20px;
+    padding: 8px 25px;
     margin-top: 10px;
     cursor: pointer;
     font-size: 14px;
     align-self: flex-end;
+    border-radius: 4px;
 }
 
 form button:hover {
-    background-color: #ff8c00;
+    background-color: #014d2d;
+}
+
+/* ========== FOOTER ========== */
+footer {
+    background-color: #005f99;
+    color: #ffffff;
+    width: 100%;
+    padding: 20px 10px 10px;
+    border-top: 4px solid #2e9e5b;
+    box-sizing: border-box;
+}
+
+.footer-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer-columna {
+    margin: 10px;
+    text-align: left;
+}
+
+footer h2,
+footer h3 {
+    margin: 5px 0 10px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+footer li {
+    margin: 5px 0;
+}
+
+.enlace-footer {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.enlace-footer:hover {
+    color: #a8e6c1;
+    text-decoration: underline;
+}
+
+.derechos {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    margin-top: 15px;
+    padding-top: 10px;
+    font-size: 0.85em;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .paquete,
+    .testimonio {
+        width: 100%;
+    }
+
+    .galeria img {
+        width: 100%;
+        margin: 5px 0;
+    }
 }

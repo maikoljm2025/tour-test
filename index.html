@@ -1,21 +1,133 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Agencia de viajes y tours</title>
-    </head>
-    <body>
-        <header>
-            <h1>Explora el Mundo</h1>
-            <nav>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora el Mundo | Agencia de viajes y tours</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ========== HEADER + NAVBAR ========== -->
+    <header>
+        <h1>Explora el Mundo</h1>
+        <p class="lema">Agencia de viajes y tours</p>
+        <nav>
+            <ul>
+                <li><a href="#destinos" class="enlace">Destinos</a></li>
+                <li><a href="#paquetes" class="enlace">Paquetes</a></li>
+                <li><a href="#testimonios" class="enlace">Testimonios</a></li>
+                <li><a href="#contacto" class="enlace">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========== CONTENIDO PRINCIPAL ========== -->
+    <main>
+
+        <!-- Destinos -->
+        <section id="destinos">
+            <h2 class="subtitulo">Destinos</h2>
+            <div class="galeria">
+                <img src="img/destino1.jpg" alt="Playa tropical">
+                <img src="img/destino2.jpg" alt="Montañas nevadas">
+                <img src="img/destino3.jpg" alt="Ciudad histórica">
+            </div>
+        </section>
+
+        <!-- Paquetes -->
+        <section id="paquetes">
+            <h2 class="subtitulo">Paquetes</h2>
+            <div class="paquetes">
+                <article class="paquete">
+                    <img src="img/paquete1.jpg" alt="Paquete playa">
+                    <h3>Aventura en la playa</h3>
+                    <p>5 días y 4 noches con hospedaje y tours incluidos.</p>
+                    <p class="estrellas">★★★★★</p>
+                    <p><strong>$450</strong></p>
+                </article>
+                <article class="paquete">
+                    <img src="img/paquete2.jpg" alt="Paquete montaña">
+                    <h3>Escape a la montaña</h3>
+                    <p>4 días y 3 noches con senderismo guiado.</p>
+                    <p class="estrellas">★★★★☆</p>
+                    <p><strong>$380</strong></p>
+                </article>
+                <article class="paquete">
+                    <img src="img/paquete3.jpg" alt="Paquete ciudad">
+                    <h3>Ruta cultural</h3>
+                    <p>6 días y 5 noches recorriendo sitios históricos.</p>
+                    <p class="estrellas">★★★★★</p>
+                    <p><strong>$520</strong></p>
+                </article>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section id="testimonios">
+            <h2 class="subtitulo">Testimonios</h2>
+            <div class="testimonios">
+                <article class="testimonio">
+                    <p>"Un viaje inolvidable, todo estuvo muy bien organizado."</p>
+                    <p><strong>María G.</strong></p>
+                    <img src="img/cliente1.jpg" alt="Foto de María">
+                </article>
+                <article class="testimonio">
+                    <p>"Excelente atención y los guías muy amables."</p>
+                    <p><strong>Carlos R.</strong></p>
+                    <img src="img/cliente2.jpg" alt="Foto de Carlos">
+                </article>
+                <article class="testimonio">
+                    <p>"Repetiría sin dudarlo, 100% recomendado."</p>
+                    <p><strong>Ana L.</strong></p>
+                    <img src="img/cliente3.jpg" alt="Foto de Ana">
+                </article>
+            </div>
+        </section>
+
+        <!-- Contacto -->
+        <section id="contacto">
+            <h2 class="subtitulo">Contacto</h2>
+            <form action="#" method="post">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="correo">Correo electrónico</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="mensaje">Mensaje</label>
+                <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-contenido">
+            <div class="footer-columna">
+                <h2>Explora el Mundo</h2>
+                <p>Viajes y tours diseñados para ti.</p>
+            </div>
+            <div class="footer-columna">
+                <h3>Enlaces</h3>
                 <ul>
-                    <li><a href="#destinos" class="enlace">Destinos</a></li>
-                    <li><a href="#paquetes" class="enlace">Paquetes</a></li>
-                    <li><a href="#testimonios" class="enlace">Testimonios</a></li>
-                    <li><a href="#contacto" class="enlace">Contacto</a></li>
+                    <li><a href="#destinos" class="enlace-footer">Destinos</a></li>
+                    <li><a href="#paquetes" class="enlace-footer">Paquetes</a></li>
+                    <li><a href="#testimonios" class="enlace-footer">Testimonios</a></li>
+                    <li><a href="#contacto" class="enlace-footer">Contacto</a></li>
                 </ul>
-            </nav>
-        </header>
-    </body>
+            </div>
+            <div class="footer-columna">
+                <h3>Contáctanos</h3>
+                <p>info@exploraelmundo.com</p>
+                <p>+506 0000 0000</p>
+            </div>
+        </div>
+        <p class="derechos">&copy; 2026 Explora el Mundo. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
 </html>
